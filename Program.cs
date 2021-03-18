@@ -11,6 +11,8 @@ namespace FirstConsoleAppDotNetCore
 
             Human human2 = new Human("John", "Jackson", 40);
             human2.Introduce();
+            human2.SayPassword();
+            Console.WriteLine(human2.CalculateSum(5, 3));
 
             Human human3 = new Human("Jenifer", "Branson", 25);
             human3.Introduce();
@@ -34,6 +36,15 @@ namespace FirstConsoleAppDotNetCore
         {
             Console.WriteLine($"Hi, my name is {this.Name} {this.Surname} and I am {this.Age} years old.");
         }
-    }
 
+        public void SayPassword()
+        {
+            Console.WriteLine($"{this.Name}: ******************");
+        }
+
+        public int CalculateSum(int a, int b)
+        {
+            return a + b;
+        }
+    }
 }
