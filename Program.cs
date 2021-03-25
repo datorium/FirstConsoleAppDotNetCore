@@ -9,44 +9,19 @@ namespace FirstConsoleAppDotNetCore
         {
             List<Human> clients = new List<Human>();
             Human client = null;
+            Random rand = new Random();
 
-            client = new Human("Anna", "Lopez", 16);
-            clients.Add(client); 
-
-            client = new Human("John", "Jackson", 40);
-            clients.Add(client);
-
-            client = new Human("Jenifer", "Branson", 25);
-            clients.Add(client);
-
-            client = new Human("Android", "Smart", 18);
-            clients.Add(client);
-
-            client = new Human("Android", "Smart", 18);
-            clients.Add(client);
-
-            client = new Human("Android", "Smart", 18);
-            clients.Add(client);
-
-            client = new Human("Android", "Smart", 18);
-            clients.Add(client);
-
-            //Introduce our clients
-            Console.WriteLine("The simple way of printing");
-            clients[0].Introduce();
-            clients[1].Introduce();
-            clients[2].Introduce();
-            clients[3].Introduce();
-            clients[4].Introduce();
-            clients[5].Introduce();
-            clients[6].Introduce();
-
-            Console.WriteLine("Using for loop");
-            for(int i = 0; i < 7; i++)
+            for(int i = 0; i < 50; i++)
             {
-                clients[i].Introduce();
+                string name = "Name" + i.ToString();
+                string surname = "Surname" + i.ToString();
+                int age = rand.Next(14, 111);
+
+                client = new Human(name, surname, age);
+                clients.Add(client);
             }
 
+            //Introduce our clients
             Console.WriteLine("Using foreach loop");
             foreach(var c in clients)
             {
