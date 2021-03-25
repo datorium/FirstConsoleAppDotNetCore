@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FirstConsoleAppDotNetCore
 {
@@ -6,16 +7,51 @@ namespace FirstConsoleAppDotNetCore
     {
         static void Main(string[] args)
         {
-            Human human1 = new Human("Anna", "Lopez", 16);
-            human1.Introduce();
+            List<Human> clients = new List<Human>();
+            Human client = null;
 
-            Human human2 = new Human("John", "Jackson", 40);
-            human2.Introduce();
-            human2.SayPassword();
-            Console.WriteLine(human2.CalculateSum(5, 3));
+            client = new Human("Anna", "Lopez", 16);
+            clients.Add(client); 
 
-            Human human3 = new Human("Jenifer", "Branson", 25);
-            human3.Introduce();
+            client = new Human("John", "Jackson", 40);
+            clients.Add(client);
+
+            client = new Human("Jenifer", "Branson", 25);
+            clients.Add(client);
+
+            client = new Human("Android", "Smart", 18);
+            clients.Add(client);
+
+            client = new Human("Android", "Smart", 18);
+            clients.Add(client);
+
+            client = new Human("Android", "Smart", 18);
+            clients.Add(client);
+
+            client = new Human("Android", "Smart", 18);
+            clients.Add(client);
+
+            //Introduce our clients
+            Console.WriteLine("The simple way of printing");
+            clients[0].Introduce();
+            clients[1].Introduce();
+            clients[2].Introduce();
+            clients[3].Introduce();
+            clients[4].Introduce();
+            clients[5].Introduce();
+            clients[6].Introduce();
+
+            Console.WriteLine("Using for loop");
+            for(int i = 0; i < 7; i++)
+            {
+                clients[i].Introduce();
+            }
+
+            Console.WriteLine("Using foreach loop");
+            foreach(var c in clients)
+            {
+                c.Introduce();
+            }
         }
     }
 
